@@ -1,0 +1,21 @@
+@import '../../../../styles/burst-theme';
+@import './success-prompt/success-prompt.component.theme';
+@import './share-media/share-media.component.theme';
+@import './nav-buttons/nav-buttons.component.theme';
+@mixin success-component-themes($theme) {
+  
+  @include success-prompt-theme($theme);
+  @include share-media-theme($theme);
+  @include nav-buttons-theme($theme);
+
+  $secondaryPalette: burst-theme-palette($theme, sec);
+  $secondaryColor: burst-theme-palette-color($secondaryPalette);
+  $secondaryText: burst-theme-palette-text($secondaryPalette);
+  .add-more-btn {
+    background: $secondaryColor;
+    color: $secondaryText;
+  }
+  .navigation-buttons-container {
+    color: $secondaryColor;
+  }
+}

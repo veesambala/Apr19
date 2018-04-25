@@ -1,0 +1,11 @@
+@import 'display/display.theme';
+@import 'form/form.theme';
+@import 'theme/theme.theme';
+@import 'toaster/toaster.theme';
+
+@mixin ugc-shared-component-themes($theme) {
+  @include ugc-display-theme($theme);
+  @include ugc-form-theme($theme);
+  @include ugc-theme-theme($theme);
+  @include ugc-toaster-theme($theme);
+}

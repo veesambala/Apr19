@@ -1,0 +1,45 @@
+@import '../../../../../styles/burst-responsive';
+@import '../../../../../styles/burst-text';
+$infoTextSize: burst-text-get-size($textSizesMed, sm);
+$buttonsHeight: 44px;
+$buttonTextSize: burst-text-get-size($textSizesSmall, sm);
+.nav-buttons-container {
+  width: 100%;
+  .primary-button {
+    margin-top: 15px;
+    width: 280px;
+    height: $buttonsHeight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 1px rgba(black, 0.3);
+    border-radius: 2px;
+    margin-bottom: 4px;
+    #landingFileInput {
+      display: none;
+    }
+    @include burst-text($buttonTextSize, (link: true, weight: bold));
+  }
+  .secondary-buttons-container {
+    position: relative;
+    width: 100%;
+    height: $buttonsHeight;
+    margin-bottom: 8px;
+    .secondary-button {
+      position: absolute;
+      height: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include burst-text($buttonTextSize, (link: true, weight: bold));
+    }
+    .secondary-button.finished {
+      left: 0;
+    }
+    .secondary-button.view {
+      right: 0;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="nav-buttons-container">
+  <div *ngIf="primaryButtonState !== 'NONE'"
+       class="primary-button" [ngClass]='{"disabled": primaryButtonState == "DISABLED"}'
+       (click)="primaryButtonClick()">
+    <div class="primary-button-text">{{primaryButtonText}}</div>
+  </div>
+  <div class="secondary-buttons-container">
+    <div class="secondary-button back"
+         (click)="backButtonClick()">
+      <div class="secondary-button-text">{{backButtonText}}</div>
+    </div>
+    <div class="secondary-button cancel"
+         (click)="cancelButtonClick()">
+      <div class="secondary-button-text">{{cancelButtonText}}</div>
+    </div>
+  </div>
+</div>

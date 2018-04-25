@@ -1,0 +1,7 @@
+@import 'media-adder/media-adder.component.theme';
+@import 'add-media-prompt/add-media-prompt.component.theme';
+
+@mixin add-media-component-themes($theme) {
+  @include media-adder-control-theme($theme);
+  @include add-media-prompt-theme($theme);
+}

@@ -1,0 +1,7 @@
+@import 'desktop-right-panel/desktop-right-panel.component.theme';
+@import 'mobile-header/mobile-header.component.theme';
+
+@mixin ugc-page-layout-theme($theme) {
+  @include ugc-page-layout-desktop-right-panel-theme($theme);
+  @include ugc-page-layout-mobile-header-theme($theme);
+}

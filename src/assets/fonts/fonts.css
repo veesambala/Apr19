@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'burst-theme-text-regular';
+  src: url('../fonts/proxima-nova/regular.otf');
+}
+
+@font-face {
+  font-family: 'burst-theme-text-light';
+  src: url('../fonts/proxima-nova/light.otf');
+}
+
+@font-face {
+  font-family: 'burst-theme-text-bold';
+  src: url('../fonts/proxima-nova/bold.otf');
+}

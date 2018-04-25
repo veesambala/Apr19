@@ -1,0 +1,17 @@
+<div *ngIf="logo && logo.clickThroughUrl; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+  <a class="logo"
+     [attr.href]="logo.clickThroughUrl"
+     [class.disabled]="!logo.clickThroughUrl"
+     target="_blank">
+
+    <img class="logo-image"
+         src="{{logo.imageUrl}}"
+         (error)="logoError()">
+  </a>
+</ng-template>
+<ng-template #elseBlock>
+  <img class="logo-image"
+       src="{{logo.imageUrl}}"
+       (error)="logoError()">
+</ng-template>

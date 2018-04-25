@@ -1,0 +1,15 @@
+<div class="media-layout">
+  <div class="media-container"
+       [ngClass]='{"no-media": filesList.length === 0, "single-media": filesList.length === 1, "two-media": filesList.length === 2, "three-media": filesList.length === 3, "four-media": filesList.length === 4, "five-media": filesList.length === 5}'>
+    <div class="spacer-item"></div>
+    <div class="media-item">
+      <media-adder-button (onAddMedia)="fileSelected($event)" [maxMediaCount]="maxMediaCount" [addedMediaCount]="filesList.length"></media-adder-button>
+    </div>
+    <div *ngFor="let file of filesList"
+         class="media-item">
+      <display-local-media-file [file]="file"
+                                [allowClose]="true"
+                                (onClose)="removeFile(file)"></display-local-media-file>
+    </div>
+  </div>
+</div>

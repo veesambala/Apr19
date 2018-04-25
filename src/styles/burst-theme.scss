@@ -1,0 +1,53 @@
+@function burst-theme-palette($theme, $paletteType: prim) {
+  $palette: map-get($theme, 'primary');
+
+  @if $paletteType == 'sec' {
+    $palette: map-get($theme, 'secondary');
+  } @else if $paletteType == 'ter' {
+    $palette: map-get($theme, 'tertiary');
+  } @else if $paletteType == 'wn' {
+    $palette: map-get($theme, 'warn')
+  } @else if $paletteType == 'bg' {
+    $palette: map-get($theme, 'background')
+  } @else if $paletteType == 'fg' {
+    $palette: map-get($theme, 'foreground');
+  }
+
+  @return $palette;
+}
+
+@function burst-theme-palette-color($palette, $colorType: base) {
+  $color: map-get($palette, 'base');
+
+  @if $colorType == 'dark' {
+    $color: map-get($palette, 'dark');
+  }
+
+  @if $colorType == 'light' {
+    $color: map-get($palette, 'light');
+  }
+
+  @return $color;
+}
+
+@function burst-theme-palette-text($palette, $textType: prim) {
+  $color: map-get($palette, 'primaryText');
+
+  @if $textType == 'sec' {
+    $color: map-get($palette, 'secondaryText');
+  } @else if $textType == 'ter' {
+    $color: map-get($palette, 'tertiaryText');
+  } @else if $textType == 'dis' {
+    $color: map-get($palette, 'disabledText');
+  } @else if $textType == 'div' {
+    $color: map-get($palette, 'dividers');
+  }
+
+  @return $color;
+}
+
+@function burst-theme-palette-text-invert($palette, $textType: prim) {
+  $color: burst-theme-palette-text($palette, $textType);
+
+  @return invert($color);
+}

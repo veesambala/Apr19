@@ -1,0 +1,56 @@
+@import '../../../../../styles/burst-responsive';
+@import '../../../../../styles/burst-text';
+
+$buttonsHeight: 44px;
+$buttonTextSize: burst-text-get-size($textSizesSmall, sm);
+
+:host {
+  display: block;
+}
+
+.nav-buttons-container {
+  width: 100%;
+
+  .primary-button {
+    width: 100%;
+    height: $buttonsHeight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 1px rgba(black, 0.3);
+    border-radius: 2px;
+    @include burst-text($buttonTextSize, (link: true, weight: bold));
+  }
+
+  .secondary-buttons-container {
+    position: relative;
+    width: 100%;
+    height: $buttonsHeight;
+    margin-top: 8px;
+
+    .secondary-button {
+      position: absolute;
+      height: 100%;
+      padding-left: 16px;
+      padding-right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include burst-text($buttonTextSize, (link: true, weight: bold));
+    }
+
+    .secondary-button.back {
+      left: 0;
+    }
+
+    .secondary-button.cancel {
+      right: 0;
+    }
+  }
+
+  @include burst-responsive-mobile() {
+    .secondary-buttons-container {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@import '../../../../../styles/burst-responsive';
+@import '../../../../../styles/burst-text';
+$infoTextSize: burst-text-get-size($textSizesMed, sm);
+.social-div {
+  margin-top: 45px;
+  text-align: center;
+  @include burst-text($infoTextSize, (weight: norm));
+}

@@ -1,0 +1,44 @@
+@import '../../../../../styles/burst-theme';
+
+@mixin ugc-page-layout-desktop-right-panel-theme($theme) {
+  $primaryPalette: burst-theme-palette($theme);
+  $primaryLightColor: burst-theme-palette-color($primaryPalette, light);
+  $primaryDarkColor: burst-theme-palette-color($primaryPalette, dark);
+  $primaryTextColor: burst-theme-palette-text($primaryPalette, dis);
+  $secondaryPalette: burst-theme-palette($theme, sec);
+  $secondaryColor: burst-theme-palette-color($secondaryPalette);
+  $tertiaryPalette: burst-theme-palette($theme, ter);
+  $tertiaryColor: burst-theme-palette-color($tertiaryPalette);
+  $backgroundPalette: burst-theme-palette($theme, bg);
+  $backgroundColor: burst-theme-palette-color($backgroundPalette);
+
+  .ugc-page-layout-desktop-right-panel {
+    background-color: $backgroundColor;
+
+    .ugc-page-layout-gradient {
+      background: radial-gradient(#{$primaryLightColor}, #{$primaryDarkColor});
+    }
+
+    .ugc-page-layout-icons {
+      .alt-accent {
+        fill: $tertiaryColor;
+      }
+
+      .accent {
+        fill: $secondaryColor;
+      }
+
+      .light-grey {
+        fill: rgba($primaryTextColor, 0.7);
+      }
+
+      .dark-grey {
+        fill: rgba($primaryTextColor, 0.5);
+      }
+    }
+
+    .ugc-page-layout-arc-shape {
+      background-color: $backgroundColor;
+    }
+  }
+}

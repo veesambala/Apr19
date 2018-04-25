@@ -1,0 +1,20 @@
+@import '../../../../../styles/burst-text';
+@import '../../../../../styles/burst-responsive';
+$infoTextSizeSmall: burst-text-get-size($textSizesMed, xs);
+$infoTextSize: burst-text-get-size($textSizesMed, sm);
+.tc-agreement-text {
+  @include burst-text($infoTextSize, (weight: norm));
+  max-height: 300px;
+  // border: 1px solid #4D4D4D;
+  overflow: auto;
+  padding: 15px;
+  margin: 2% 24%;
+  line-height: 1.5em;
+  text-align: justify;
+  @include burst-responsive-xs-sm() {
+    max-height: 400px;
+    margin-top: 10%;
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+}

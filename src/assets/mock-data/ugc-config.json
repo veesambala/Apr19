@@ -1,0 +1,104 @@
+{
+  "ugcC11n": {
+    "returnUrl": "http://www.burst.com",
+    "landing": {
+      "submissionBannerImageUrl": "assets/img/default-media-submission-banner.jpg",
+      "submissionBannerLogo":"NONE"
+    },
+    "branding": {
+      "logos": {
+        "partnerCircular": {
+          "imageUrl": "assets/img/ico-ugc-logo.svg",
+          "clickThroughUrl": "http://mynbc15.com/"
+        },
+        "partnerSquare": {
+          "imageUrl": "assets/img/ico-ugc-logo.png",
+          "clickThroughUrl": "http://mynbc15.com/"
+        },
+        "sponsor": {
+          "imageUrl": "assets/img/adidas.png",
+          "clickThroughUrl": "https://www.adidas.com/us"
+        }
+      },
+      "primaryLogo": "BURST",
+      "sponsorLogo": "NONE"
+    },
+    "theme": {
+      "themeName": "burst-theme-default-light",
+      "enableMobileBackgroundPattern": true,
+      "enableDesktopBackgroundPattern": true,
+      "enableDesktopIconBackgrounds": true
+    }
+  },
+  "locales": {
+    "default": "en-us",
+    "supported": {
+      "en-us": {
+        "formFields": {
+          "name": {
+            "placeHolder": "Full Name",
+            "type": "text",
+            "required": true,
+            "validationRegex": "",
+            "validationError": "",
+            "iconName": "account.ico"
+          },
+          "email": {
+            "placeHolder": "Email",
+            "type": "email",
+            "required": true,
+            "validationRegex": "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$",
+            "validationError": "A valid email is required",
+            "iconName": "email.ico"
+          }
+        },
+
+        "landingPageTitle": "Media Submission",
+        "landingPageTitlePrompt": "",
+        "landingPageTipText": "Tip: for best results, capture media holding your phone horizontally",
+        "landingPageUploadPrompt": "Add Your Videos and Photos Now!",
+
+        "addMediaPrompt": "You can submit up to five media, including one video",
+        "addMediaPageTitle": "Add Media",
+
+        "formPageHeadlineText": "This information is used to verify or recognize your submission",
+        "formPageTitle": "Almost Done!",
+
+        "termsAndConditionsPageTitle": "Terms & Conditions",
+        "termsAndConditionsAutoAcceptText": "By tapping on the Upload button below, you are agreeing to our terms and conditions",
+        "termsAndConditionsManualAcceptText": "I have viewed and accept the ",
+        "termsAndConditionAgreePrompt": "I agree to Terms & Conditions",
+        "termsAndConditionAgreementText": "<span><b>Welcome to Burst</b>! Since we believe in making sure our users understand Burst throughout their experience, we believe it is important for you to read and understand these Terms of Service. Burst and the <b>Burst.com</b> website (the 'Site') are owned and operated by Burst Inc. ('Burst'). <br/><br/>These <b>Terms of Service</b> apply to your access to, and use of Burst, including your use of any video, digital media, media hosting services, and any other services provided on or through Burst (the 'Services'), as well as to your purchase of any products ('Products') from Burst. <br/> These Terms of Service DO NOT, in any way, alter the terms or conditions of any other agreement you may have with Burst, except in the case of an express conflict between any such terms and conditions in which case the terms of such other agreement will control. Your use of Burst and the Services and your purchase of Products is expressly conditioned upon your agreement to these Terms of Use. By using Burst, you consent to <b>Welcome to Burst!</b> Since we believe in making sure our users understand Burst throughout their experience, we believe it is important for you to read and understand these Terms of Service. Burst and the Burst.com website (the 'Site') are owned and operated by Burst Inc. ('Burst'). These Terms of Service apply to your access to, and use of Burst, including your use of any video, digital media, media hosting services, and any other services provided on or through Burst (the 'Services'), as well as to your purchase of any products ('Products') from Burst. These Terms of Service DO NOT, in any way, alter the terms or conditions of any other agreement you may have with Burst, except in the case of an express conflict between any such terms and conditions in which case the terms of such other agreement will control. Your use of Burst and the Services and your purchase of Products is expressly conditioned upon your agreement to these Terms of Use. By using Burst, you consent to</span>",
+        "termsAndConditionsFlowRule": "A",
+        "termsConditionsType":"CHECKBOX",
+
+        "mediaTitleText": "Media Title",
+        "ageConfirmationText": "I am 13 years of age or older",
+        "progressIssuePrompt":"Having Trouble?",
+        "emailHelpPrompt":"send us an email",
+
+        "poweredByText": "Powered by",
+        "addMediaText": "ADD MEDIA",
+        "currentNumMediaText": "__CURRENT__ of __MAX__ media",
+        "uploadText": "UPLOAD",
+        "notNowText": "NOT NOW",
+        "nextText": "NEXT",
+        "backText": "BACK",
+        "cancelText": "CANCEL",
+        "requiredText": "__PLACE_HOLDER__ is required",
+        "addMoreText":"ADD MORE",
+
+        "successTextPrompt":"Your media has been successfully uploaded!",
+        "finishedText":"FINISHED",
+        "viewMediaText":"VIEW YOUR MEDIA",
+        "shareMediaPrompt":"Share your Media",
+
+        "duplicateMediaError": "Media file __NAME__ has already been added!",
+        "maxMediaError": "Cannot add __NAME__, can only upload __MAX__ files at a time!",
+        "maxVideosError": "Cannot add __NAME__, can only upload __MAX_VIDEOS__ video at a time!",
+        "unsupportedMediaError": "__NAME__ is an unsupported file type!",
+        "emptyMediaError": "Issue with the media file __NAME__, cannot upload!"
+      }
+    }
+  }
+}

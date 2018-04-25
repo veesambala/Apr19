@@ -1,0 +1,54 @@
+@import '../../../../../../styles/burst-theme';
+
+@mixin add-media-media-adder-button-theme($theme) {
+  $secondaryPalette: burst-theme-palette($theme, sec);
+  $secondaryColor: burst-theme-palette-color($secondaryPalette);
+  $secondaryText: burst-theme-palette-text($secondaryPalette);
+  $secondaryTextDis: burst-theme-palette-text($secondaryPalette, dis);
+  $backgroundPalette: burst-theme-palette($theme, bg);
+  $backgroundText: burst-theme-palette-text($backgroundPalette, dis);
+
+  .media-adder-button {
+    background-color: $secondaryColor;
+
+    .ico-add-media {
+      .primary-text {
+        fill: $secondaryText;
+      }
+
+      .primary {
+        fill: $secondaryColor;
+      }
+    }
+
+    .add-media-text {
+      color: $secondaryText;
+    }
+
+    .media-track-text {
+      color: $secondaryTextDis;
+    }
+  }
+
+  .media-adder-button.disabled {
+    background-color: $backgroundText;
+
+    .ico-add-media {
+      .primary-text {
+        fill: $secondaryText;
+      }
+
+      .primary {
+        fill: $backgroundText;
+      }
+    }
+
+    .add-media-text {
+      color: $backgroundText;
+    }
+
+    .media-track-text {
+      color: $backgroundText;
+    }
+  }
+}

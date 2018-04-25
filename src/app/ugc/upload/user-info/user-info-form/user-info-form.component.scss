@@ -1,0 +1,41 @@
+@import '../../../../../styles/burst-responsive';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-info-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .user-info-field {
+    width: 100%;
+  }
+}
+
+@include burst-responsive-xs() {
+  .user-info-container {
+    .user-info-field {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+@include burst-responsive-sm() {
+  .user-info-container {
+    .user-info-field {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+@include burst-responsive-desktop() {
+  .user-info-container {
+    .user-info-field {
+      margin-bottom: 12px;
+    }
+  }
+}

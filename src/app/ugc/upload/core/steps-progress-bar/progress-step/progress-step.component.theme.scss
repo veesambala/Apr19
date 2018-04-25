@@ -1,0 +1,11 @@
+@import '../../../../../../styles/burst-theme';
+
+@mixin upload-steps-progress-bar-step-theme($theme) {
+  $tertiaryPalette: burst-theme-palette($theme, ter);
+  $tertiaryColor: burst-theme-palette-color($tertiaryPalette);
+
+  .progress-step {
+    background-color: $tertiaryColor;
+  }
+  
+}

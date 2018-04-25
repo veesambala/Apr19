@@ -1,0 +1,43 @@
+@import '../../../../styles/burst-responsive';
+
+:host {
+  display: block;
+}
+
+.page-layout {
+  width: 100%;
+  height: 100%;
+
+  @include burst-responsive-mobile() {
+    display: flex;
+    flex-direction: column;
+
+    desktop-right-panel {
+      display: none;
+    }
+
+    .page-layout-content {
+      flex: 1 0;
+    }
+  }
+
+  @include burst-responsive-desktop() {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    mobile-header {
+      display: none;
+    }
+
+    desktop-right-panel {
+      width: 30%;
+      order: 1;
+    }
+
+    .page-layout-content {
+      flex: 1 0;
+      order: 0;
+    }
+  }
+}

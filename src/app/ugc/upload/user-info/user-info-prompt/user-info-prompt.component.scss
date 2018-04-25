@@ -1,0 +1,6 @@
+@import '../../../../../styles/burst-text';
+
+.user-info-prompt {
+  @include burst-text-responsive(lg, (xs, sm));
+  text-align: center;
+}

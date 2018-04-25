@@ -1,0 +1,219 @@
+@import './burst-responsive';
+
+$textSizesExtraSmall: (
+  xxs: 0.4rem,
+  xs: 0.6rem,
+  sm: 0.8rem,
+  md: 1rem,
+  lg: 1.2rem,
+  xl: 1.4rem,
+  xxl: 1.6rem
+);
+$textSizesSmall: (
+  xxs: 0.5rem,
+  xs: 0.7rem,
+  sm: 0.9rem,
+  md: 1.1rem,
+  lg: 1.3rem,
+  xl: 1.5rem,
+  xxl: 1.7rem
+);
+$textSizesMed: (
+  xxs: 0.6rem,
+  xs: 0.8rem,
+  sm: 1rem,
+  md: 1.2rem,
+  lg: 1.4rem,
+  xl: 1.6rem,
+  xxl: 1.8rem
+);
+$textSizesLarge: (
+  xxs: 0.8rem,
+  xs: 1rem,
+  sm: 1.2rem,
+  md: 1.4rem,
+  lg: 1.6rem,
+  xl: 1.8rem,
+  xxl: 2rem
+);
+
+@function burst-text-get-sizes($sizeList, $desiredSize) {
+  $size: $textSizesMed;
+
+  @if $desiredSize == 'xs' {
+    @if index($sizeList, $desiredSize) {
+      $size: $textSizesExtraSmall;
+    } @else {
+      @if index($sizeList, 'sm') {
+        $size: $textSizesSmall;
+      } @else if index($sizeList, 'md') {
+        $size: $textSizesMed;
+      } @else if index($sizeList, 'lg') {
+        $size: $textSizesLarge;
+      } @else {
+        $size: $textSizesExtraSmall;
+      }
+    }
+  }
+
+  @if $desiredSize == 'sm' {
+    @if index($sizeList, $desiredSize) {
+      $size: $textSizesSmall;
+    } @else {
+      @if index($sizeList, 'xs') {
+        $size: $textSizesExtraSmall;
+      } @else if index($sizeList, 'md') {
+        $size: $textSizesMed;
+      } @else if index($sizeList, 'lg') {
+        $size: $textSizesLarge;
+      } @else {
+        $size: $textSizesSmall;
+      }
+    }
+  }
+
+  @if $desiredSize == 'md' {
+    @if index($sizeList, $desiredSize) {
+      $size: $textSizesMed;
+    } @else {
+      @if index($sizeList, 'sm') {
+        $size: $textSizesSmall;
+      } @else if index($sizeList, 'xs') {
+        $size: $textSizesExtraSmall;
+      } @else if index($sizeList, 'lg') {
+        $size: $textSizesLarge;
+      } @else {
+        $size: $textSizesMed;
+      }
+    }
+  }
+
+  @if $desiredSize == 'lg' {
+    @if index($sizeList, $desiredSize) {
+      $size: $textSizesLarge;
+    } @else {
+      @if index($sizeList, 'md') {
+        $size: $textSizesMed;
+      } @else if index($sizeList, 'sm') {
+        $size: $textSizesSmall;
+      } @else if index($sizeList, 'xs') {
+        $size: $textSizesExtraSmall;
+      } @else {
+        $size: $textSizesLarge;
+      }
+    }
+  }
+
+  @return $size;
+}
+
+@function burst-text-get-size($textSizes, $size) {
+  $size: map-get($textSizes, $size);
+  @if $size == none {
+    $size: 0;
+  }
+
+  @return $size;
+}
+
+@mixin burst-text(
+  $size,
+  $extrasMap: ()
+) {
+  font-size: #{$size};
+
+  $weight: map-get($extrasMap, 'weight');
+  $style: map-get($extrasMap, 'style');
+  $link: map-get($extrasMap, 'link');
+  $case: map-get($extrasMap, 'case');
+  $overflow: map-get($extrasMap, 'overflow');
+  $singleLine: map-get($extrasMap, 'singleLine');
+
+  @if $weight == 'light' {
+    font-family: 'burst-theme-text-light';
+    font-weight: normal;
+  }
+  
+  @if $weight == 'norm' {
+    font-family: 'burst-theme-text-regular';
+    font-weight: normal;
+  }
+  
+  @if $weight == 'bold' {
+    font-family: 'burst-theme-text-regular';
+    font-weight: bold;
+  }
+  
+  @if $weight == 'bolder' {
+    font-family: 'burst-theme-text-bold';
+    font-weight: bold;
+  }
+
+  @if $style == 'norm' {
+    font-style: normal;
+  }
+
+  @if $style == 'italic' {
+    font-style: italic;
+  }
+
+  @if $style == 'oblique' {
+    font-style: oblique;
+  }
+
+  @if $link == true {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  @if $case == 'upper' {
+    text-transform: uppercase;
+  }
+
+  @if $case == 'lower' {
+    text-transform: lowercase;
+  }
+
+  @if $case == 'capitalize' {
+    text-transform: capitalize;
+  }
+
+  @if $overflow == 'ellipsis' {
+    text-overflow: ellipsis;
+  }
+
+  @if $singleLine {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+@mixin burst-text-responsive(
+  $size,
+  $sizeList: (xs, sm, md, lg),
+  $extrasMap: ()
+) {
+  @include burst-responsive-xs() {
+    $sizes: burst-text-get-sizes($sizeList, xs);
+    $responsiveSize: burst-text-get-size($sizes, $size);
+    @include burst-text($responsiveSize, $extrasMap);
+  }
+
+  @include burst-responsive-sm() {
+    $sizes: burst-text-get-sizes($sizeList, sm);
+    $responsiveSize: burst-text-get-size($sizes, $size);
+    @include burst-text($responsiveSize, $extrasMap);
+  }
+
+  @include burst-responsive-md() {
+    $sizes: burst-text-get-sizes($sizeList, md);
+    $responsiveSize: burst-text-get-size($sizes, $size);
+    @include burst-text($responsiveSize, $extrasMap);
+  }
+
+  @include burst-responsive-lg-xl() {
+    $sizes: burst-text-get-sizes($sizeList, lg);
+    $responsiveSize: burst-text-get-size($sizes, $size);
+    @include burst-text($responsiveSize, $extrasMap);
+  }
+}

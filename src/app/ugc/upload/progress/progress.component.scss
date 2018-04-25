@@ -1,0 +1,99 @@
+@import '../../../../styles/burst-responsive';
+@import '../../../../styles/burst-text';
+$infoTextSize: burst-text-get-size($textSizesMed, sm);
+$mobileSpacing: 6px;
+$tabletSpacing: 10px;
+$desktopSpacing: 8px;
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-progress-container {
+  margin-top: 10px;
+  flex: 1 0;
+}
+
+@include burst-responsive-xs() {
+  .upload-progress-container {
+    width: 97.5%;
+  }
+}
+
+@include burst-responsive-sm() {
+  .upload-progress-container {
+    width: 70%;
+  }
+}
+
+@include burst-responsive-desktop() {
+  .upload-progress-container {
+    width: 680px;
+  }
+}
+
+.media-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  .media-item {
+    position: relative;
+    display-local-media-file {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+  }
+  @include burst-responsive-xs() {
+    margin-left: calc(#{$mobileSpacing} / 2);
+    .media-item {
+      padding-top: calc(4/5 * 50% - #{$mobileSpacing});
+      width: calc(50% - #{$mobileSpacing});
+      margin-bottom: #{$mobileSpacing};
+      margin-right: #{$mobileSpacing};
+    }
+  }
+  @include burst-responsive-sm() {
+    margin-left: calc(#{$tabletSpacing} / 2);
+    .media-item {
+      padding-top: calc(4/5 * 50% - #{$tabletSpacing});
+      width: calc(50% - #{$tabletSpacing});
+      margin-bottom: #{$tabletSpacing};
+      margin-right: #{$tabletSpacing};
+    }
+  }
+  @include burst-responsive-desktop() {
+    margin-left: calc(#{$desktopSpacing} / 2);
+    .media-item {
+      padding-top: calc(4/5 * 33% - #{$desktopSpacing});
+      width: calc(33% - #{$desktopSpacing});
+      margin-bottom: #{$desktopSpacing};
+      margin-right: #{$desktopSpacing};
+    }
+  }
+}
+
+.media-container.no-media {
+  justify-content: center;
+}
+
+@include burst-responsive-desktop() {
+  .media-container.single-media {
+    justify-content: center;
+  }
+  .media-container.three-media {
+    justify-content: center;
+    .spacer-item {
+      height: 100%;
+      width: 8px;
+    }
+  }
+  .media-container.four-media {
+    justify-content: flex-end;
+  }
+}

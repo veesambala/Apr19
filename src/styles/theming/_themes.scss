@@ -1,0 +1,6 @@
+@import '../../app/app.themes';
+@import './_default-light';
+
+.burst-theme-default-light {
+  @include app-component-themes($burst-theme-default-light);
+}

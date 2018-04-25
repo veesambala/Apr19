@@ -1,0 +1,44 @@
+@import '../../../../styles/burst-theme';
+@mixin ugc-form-material-checkbox-theme($theme) {
+  $primaryPalette: burst-theme-palette($theme);
+  $primaryColor: burst-theme-palette-color($primaryPalette);
+  $secondaryPalette: burst-theme-palette($theme, sec);
+  $secondaryColor: burst-theme-palette-color($secondaryPalette);
+  $backgroundPalette: burst-theme-palette($theme, bg);
+  $backgroundText: burst-theme-palette-text($backgroundPalette, dis);
+  $secondaryText: burst-theme-palette-text($secondaryPalette);
+  $backgroundSecText: burst-theme-palette-text($backgroundPalette, sec);  
+
+  .checkbox-container {
+    label {
+      &:before {
+        border-color: $primaryColor !important;
+        background: $secondaryText;
+      }
+    }
+    input[type="checkbox"] {
+      &:checked+label:before {
+        background-color: $secondaryColor;
+        border-color: $secondaryColor !important;
+      }
+      +label:after{
+        border-color:$secondaryText !important;
+      }
+      &:disabled {
+        +label:before {
+          border-color: $backgroundText !important;
+          background-color: $backgroundText;
+        }
+        &:checked {
+          +label:before {
+            background-color: $backgroundText;
+          }
+        }
+      }
+    }
+    .material-checkbox-label,
+    .material-checkbox-link {
+      color: $backgroundSecText;
+    }    
+  }
+}

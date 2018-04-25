@@ -1,0 +1,26 @@
+/* this file will be extracted to main dist folder and is imported in index.html */
+/* This file is for setting global styles  */
+
+@import 'theming/_themes';
+@import '../assets/fonts/fonts.css';
+
+html,body{
+  height: 100%;
+  margin: 0;
+  font-family: burst-theme-text-regular;
+  -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+img[src*="assets"] {
+  pointer-events: none !important;
+}
+
+img[src*="assets/img/cross-icon.svg"]{
+  pointer-events: all !important;
+}

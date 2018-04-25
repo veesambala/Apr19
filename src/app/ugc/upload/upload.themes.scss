@@ -1,0 +1,24 @@
+@import 'core/core.theme';
+@import './add-media/add-media.component.theme';
+@import './user-info/user-info.component.theme';
+@import './progress/progress.component.theme';
+@import './terms-conditions/terms-conditions.component.theme';
+@import './success/success.component.theme';
+
+@mixin upload-component-themes($theme) {
+  @include upload-core-theme($theme);
+  @include add-media-component-themes($theme);
+  @include user-info-component-themes($theme);
+  @include progress-theme($theme);
+  @include terms-conditions-component-themes($theme);
+  @include success-component-themes($theme);
+
+  $backgroundPalette: burst-theme-palette($theme, bg);
+  $backgroundText: burst-theme-palette-text($backgroundPalette, ter);
+
+  .upload-content {
+    .desktop-title {
+      color: $backgroundText;
+    }
+  }
+}

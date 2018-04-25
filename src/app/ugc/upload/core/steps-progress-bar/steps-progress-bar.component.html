@@ -1,0 +1,6 @@
+<div class="progress-container">
+  <div *ngFor="let step of steps"
+       class="progress-step-container">
+    <progress-step [completionPercentage]="step.completionPercentage"></progress-step>
+  </div>
+</div>

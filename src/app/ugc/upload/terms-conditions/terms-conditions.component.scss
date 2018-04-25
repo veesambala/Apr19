@@ -1,0 +1,26 @@
+@import '../../../../styles/burst-responsive';
+@import '../../../../styles/burst-text';
+$titleTextSize: burst-text-get-size($textSizesMed, xl);
+$infoTextSize: burst-text-get-size($textSizesMed, sm);
+$infoTextSizeSmall: burst-text-get-size($textSizesMed, xs);
+
+.agreement-checkbox-container {
+  @include burst-text($infoTextSize, (weight: norm));
+  margin: 0 auto;
+  display: table;
+}
+
+.terms-condition-text {
+  @include burst-text($titleTextSize, (weight: norm));
+  margin-bottom: 2%;
+}
+.acceptance-checkbox{
+  text-align:center;
+  padding-left: 26%;
+  @include burst-responsive-xs-sm() {
+    padding-left: 10%;
+  }
+}
+.terms-conditions-acceptance{
+  @include burst-text($infoTextSize, (weight: norm));
+}

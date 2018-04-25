@@ -1,0 +1,22 @@
+<div class="header-container"
+     [ngClass]='{"has-files": hasFiles}'>
+  <form-material-input [type]="'text'"
+                       [placeHolder]="mediaTitleText"
+                       [startingValue]="startingMediaTitle"
+                       [includeLogo]="true"
+                       (onValueChangedEvent)="mediaTitleChanged($event)">
+    <svg width="100%" height="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 4v3h5.5v12h3V7H19V4z"></path>
+      <path d="M0 0h24v24H0V0z" fill="none"></path>
+    </svg>
+  </form-material-input>
+</div>
+
+<div class="media-adder-container">
+  <media-adder></media-adder>
+</div>
+
+<div class="footer-container"
+     [ngClass]='{"has-files": hasFiles}'>
+  <add-media-prompt></add-media-prompt>
+</div>

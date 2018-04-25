@@ -1,0 +1,110 @@
+$range-xs: (min: 0px, max: 599px);
+$range-sm: (min: 600px, max: 959px);
+$range-md: (min: 960px, max: 1279px);
+$range-lg: (min: 1280px, max: 1919px);
+$range-xl: (min: 1920px, max: 5000px);
+
+@mixin burst-responsive($min-map, $max-map) {
+  $query: "";
+  @if map-has-key($min-map, min) {
+    $query: append($query, "(min-width: #{map-get($min-map, min)})");
+  }
+  @if map-has-key($max-map, max) {
+    @if map-has-key($min-map, min) {
+      $query: append($query, " and ");
+    }
+    $query: append($query, "(max-width: #{map-get($max-map, max)})");
+  }
+  @media screen and #{$query} { @content; }
+}
+
+@mixin burst-responsive-xs() {
+  @include burst-responsive($range-xs, $range-xs) {
+    @content;
+  }
+}
+@mixin burst-responsive-xs-sm() {
+  @include burst-responsive($range-xs, $range-sm) {
+    @content;
+  }
+}
+@mixin burst-responsive-xs-md() {
+  @include burst-responsive($range-xs, $range-md) {
+    @content;
+  }
+}
+@mixin burst-responsive-xs-lg() {
+  @include burst-responsive($range-xs, $range-lg) {
+    @content;
+  }
+}
+@mixin burst-responsive-xs-xl() {
+  @include burst-responsive($range-xs, $range-xl) {
+    @content;
+  }
+}
+
+@mixin burst-responsive-sm() {
+  @include burst-responsive($range-sm, $range-sm) {
+    @content;
+  }
+}
+@mixin burst-responsive-sm-md() {
+  @include burst-responsive($range-sm, $range-md) {
+    @content;
+  }
+}
+@mixin burst-responsive-sm-lg() {
+  @include burst-responsive($range-sm, $range-lg) {
+    @content;
+  }
+}
+@mixin burst-responsive-sm-xl() {
+  @include burst-responsive($range-sm, $range-xl) {
+    @content;
+  }
+}
+
+@mixin burst-responsive-md() {
+  @include burst-responsive($range-md, $range-md) {
+    @content;
+  }
+}
+@mixin burst-responsive-md-lg() {
+  @include burst-responsive($range-md, $range-lg) {
+    @content;
+  }
+}
+@mixin burst-responsive-md-xl() {
+  @include burst-responsive($range-md, $range-xl) {
+    @content;
+  }
+}
+
+@mixin burst-responsive-lg() {
+  @include burst-responsive($range-lg, $range-lg) {
+    @content;
+  }
+}
+@mixin burst-responsive-lg-xl() {
+  @include burst-responsive($range-lg, $range-xl) {
+    @content;
+  }
+}
+
+@mixin burst-responsive-xl() {
+  @include burst-responsive($range-xl, $range-xl) {
+    @content;
+  }
+}
+
+@mixin burst-responsive-mobile() {
+  @include burst-responsive-xs-sm() {
+    @content;
+  }
+}
+@mixin burst-responsive-desktop() {
+  @include burst-responsive-md-xl() {
+    @content;
+  }
+}

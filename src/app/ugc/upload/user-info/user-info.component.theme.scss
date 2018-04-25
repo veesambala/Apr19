@@ -1,0 +1,15 @@
+@import '../../../../styles/burst-theme';
+@import './user-info-prompt/user-info-prompt.component.theme';
+@import './user-info-form/user-info-form.component.theme';
+@mixin user-info-component-themes($theme) {
+  @include user-info-prompt-theme($theme);
+  @include user-info-form-theme($theme);
+
+  $backgroundPalette: burst-theme-palette($theme, bg);
+  $backgroundText: burst-theme-palette-text($backgroundPalette, sec);  
+
+  .acceptance-text-anchored,
+  .acceptance-text-unanchored {
+    color: $backgroundText;
+  }
+}

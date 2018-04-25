@@ -1,0 +1,166 @@
+/*
+* Just copy all the content and paste in https://www.sassmeister.com/ and 
+* create a new file in customization/master/*.css by changing the colors
+*/
+/*
+* Theme related values. Please dont change this.
+*/
+/* pallet background important */
+.burst-theme-custom .burst-theme-primary-important {
+  background: #B0CB42 !important;
+}
+
+/* pallet background */
+.burst-theme-custom .burst-theme-primary-bg {
+  background: #B0CB42;
+  color: #e6e6e6;
+}
+
+.burst-theme-custom .burst-theme-primary {
+  color: #B0CB42;
+}
+
+/* opaque bg for desktop hover etc */
+.burst-theme-custom .burst-theme-primary-opaque {
+  background: #b0cb42;
+}
+
+/* font-color same as pallet color */
+.burst-theme-custom .burst-theme-primary-font-color {
+  color: #B0CB42 !important;
+  border-color: #B0CB42;
+}
+
+/* backgroud white and color primary */
+.burst-theme-custom .burst-theme-primary-bg-white {
+  color: #B0CB42;
+  background: #e6e6e6;
+}
+
+/* pallet background important */
+.burst-theme-custom .burst-theme-accent-important {
+  background: #15AA85 !important;
+}
+
+/* pallet background */
+.burst-theme-custom .burst-theme-accent-bg {
+  background: #15AA85;
+  color: white;
+}
+
+.burst-theme-custom .burst-theme-accent {
+  color: #15AA85;
+}
+
+/* opaque bg for desktop hover etc */
+.burst-theme-custom .burst-theme-accent-opaque {
+  background: #15aa85;
+}
+
+/* font-color same as pallet color */
+.burst-theme-custom .burst-theme-accent-font-color {
+  color: #15AA85 !important;
+  border-color: #15AA85;
+}
+
+/* backgroud white and color primary */
+.burst-theme-custom .burst-theme-accent-bg-white {
+  color: #15AA85;
+  background: white;
+}
+
+/* pallet background important */
+.burst-theme-custom .burst-theme-warn-important {
+  background: #006791 !important;
+}
+
+/* pallet background */
+.burst-theme-custom .burst-theme-warn-bg {
+  background: #006791;
+  color: white;
+}
+
+.burst-theme-custom .burst-theme-warn {
+  color: #006791;
+}
+
+/* opaque bg for desktop hover etc */
+.burst-theme-custom .burst-theme-warn-opaque {
+  background: #006791;
+}
+
+/* font-color same as pallet color */
+.burst-theme-custom .burst-theme-warn-font-color {
+  color: #006791 !important;
+  border-color: #006791;
+}
+
+/* backgroud white and color primary */
+.burst-theme-custom .burst-theme-warn-bg-white {
+  color: #006791;
+  background: white;
+}
+
+/* pallet background important */
+.burst-theme-custom .burst-theme-foreground-important {
+  background: #FFF !important;
+}
+
+/* pallet background */
+.burst-theme-custom .burst-theme-foreground-bg {
+  background: #FFF;
+  color: #999999;
+}
+
+.burst-theme-custom .burst-theme-foreground {
+  color: #FFF;
+}
+
+/* opaque bg for desktop hover etc */
+.burst-theme-custom .burst-theme-foreground-opaque {
+  background: white;
+}
+
+/* font-color same as pallet color */
+.burst-theme-custom .burst-theme-foreground-font-color {
+  color: #FFF !important;
+  border-color: #FFF;
+}
+
+/* backgroud white and color primary */
+.burst-theme-custom .burst-theme-foreground-bg-white {
+  color: #FFF;
+  background: #999999;
+}
+
+/* pallet background important */
+.burst-theme-custom .burst-theme-background-important {
+  background: #31879D !important;
+}
+
+/* pallet background */
+.burst-theme-custom .burst-theme-background-bg {
+  background: #31879D;
+  color: white;
+}
+
+.burst-theme-custom .burst-theme-background {
+  color: #31879D;
+}
+
+/* opaque bg for desktop hover etc */
+.burst-theme-custom .burst-theme-background-opaque {
+  background: #31879d;
+}
+
+/* font-color same as pallet color */
+.burst-theme-custom .burst-theme-background-font-color {
+  color: #31879D !important;
+  border-color: #31879D;
+}
+
+/* backgroud white and color primary */
+.burst-theme-custom .burst-theme-background-bg-white {
+  color: #31879D;
+  background: white;
+}

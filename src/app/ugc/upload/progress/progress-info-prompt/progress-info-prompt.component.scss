@@ -1,0 +1,14 @@
+@import '../../../../../styles/burst-responsive';
+@import '../../../../../styles/burst-text';
+$infoTextSize: burst-text-get-size($textSizesMed, sm);
+.progress-info {
+  margin-top: 4%;
+  margin-bottom: 2%;
+  .progress-info-prompt {
+    margin-top: 2px;
+    text-align: center;
+    margin-left: 32px;
+    margin-right: 32px;
+    @include burst-text($infoTextSize, (weight: norm));
+  }
+}

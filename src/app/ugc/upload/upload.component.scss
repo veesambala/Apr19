@@ -1,0 +1,117 @@
+@import '../../../styles/burst-responsive';
+@import '../../../styles/burst-text';
+
+$titleTextSize: burst-text-get-size($textSizesMed, xxl);
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+ugc-page-layout {
+  height: 100%;
+  width: 100%;
+  min-width: 320px;
+
+  .upload-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .desktop-title {
+      width: 100%;
+      flex: none;
+      text-align: center;
+      @include burst-text($titleTextSize, (weight: norm));
+    }
+
+    .screen-layout {
+      position: relative;
+      width: 100%;
+      flex: auto;
+
+      .screen-content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0; top: 0;
+        overflow-y: scroll;
+      }
+    }
+
+    .upload-footer {
+      position: relative;
+      width: 100%;
+      flex: none;
+
+      toaster-message {
+        position: absolute;
+        left: 50%; top: 0;
+        transform: translate(-50%, -100%);
+      }
+
+      .steps-progress-container,
+      .steps-button-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    @include burst-responsive-mobile() {
+      .desktop-title {
+        display: none;
+      }
+
+      steps-progress-bar {
+        width: 100%;
+      }
+    }
+
+    @include burst-responsive-xs() {
+      toaster-message {
+        width: 90%;
+      }
+
+      steps-nav-buttons {
+        width: 90%;
+        margin-bottom: 8px;
+        margin-top: 8px;
+      }
+    }
+
+    @include burst-responsive-sm() {
+      toaster-message {
+        width: 70%;
+      }
+
+      steps-nav-buttons {
+        width: 70%;
+        margin-bottom: 16px;
+        margin-top: 16px;
+      };
+    }
+
+    @include burst-responsive-desktop() {
+      .desktop-title {
+        margin-top: 112px;
+      }
+
+      .steps-progress-container {
+        margin-bottom: 64px;
+      }
+
+      toaster-message {
+        width: 360px;
+      }
+
+      steps-progress-bar,
+      steps-nav-buttons {
+        width: 360px;
+        margin-top: 8px;
+      }
+    }
+  }
+}

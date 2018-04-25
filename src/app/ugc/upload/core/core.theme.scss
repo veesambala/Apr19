@@ -1,0 +1,8 @@
+@import '../../../../styles/burst-theme';
+@import './steps-nav-buttons/steps-nav-buttons.component.theme';
+@import './steps-progress-bar/steps-progress-bar.component.theme';
+
+@mixin upload-core-theme($theme) {
+  @include upload-steps-nav-button-theme($theme);
+  @include upload-steps-progress-bar-theme($theme);
+}

@@ -1,0 +1,11 @@
+@import '../../../../../styles/burst-responsive';
+@import '../../../../../styles/burst-text';
+@mixin success-prompt-theme($theme) {
+  $foregroundPalette: burst-theme-palette($theme, fg);
+  $secondaryPalette: burst-theme-palette($theme, sec);  
+  $foregroundText: burst-theme-palette-text($foregroundPalette, ter);
+  $secondaryColor: burst-theme-palette-color($secondaryPalette);
+  .success-prompt{
+    color: $foregroundText;
+  }
+}

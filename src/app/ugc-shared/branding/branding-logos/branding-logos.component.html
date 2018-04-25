@@ -1,0 +1,14 @@
+<div class="branding-logos-layout" [ngClass]='{"primary-only": !sponsorLogo, "with-sponsor": sponsorLogo}'>
+  <div *ngIf="primaryLogo"
+       class="primary-logo">
+    <display-logo [displayLogo]="primaryLogo"
+                  [fallbackLogo]="burstLogo"
+                  (onLoadError)="primaryLogoError($event)"></display-logo>
+  </div>
+
+  <div *ngIf="sponsorLogo"
+       class="sponsor-logo">
+    <display-logo [displayLogo]="sponsorLogo"
+                  (onLoadError)="sponsorLogoError($event)"></display-logo>
+  </div>
+</div>

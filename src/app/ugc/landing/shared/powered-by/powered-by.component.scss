@@ -1,0 +1,29 @@
+@import '../../../../../styles/burst-text';
+
+.powered-by-layout {
+  position: relative;
+  text-align: center;
+
+  $textSize: burst-text-get-size($textSizesMed, sm);
+  @include burst-text($textSize);
+
+  .powered-by-icon {
+    background-image: url("./burst-logo.svg");
+    width: 32px;
+    height: 32px;
+    margin: 0 2px 0 2px;
+  }
+
+  .burst-link {
+    text-decoration: none;
+  }
+
+  .adjust-left {
+    display: inline-block;
+    position: relative;
+  }
+
+  .top {
+    top: -10px;
+  }
+}

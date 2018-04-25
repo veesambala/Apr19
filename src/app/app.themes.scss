@@ -1,0 +1,11 @@
+@import './ugc/landing/landing.themes';
+@import './ugc/upload/upload.themes';
+@import './page404/page404.component.theme';
+@import 'ugc-shared/ugc-shared.themes';
+
+@mixin app-component-themes($theme) {
+  @include landing-component-themes($theme);
+  @include ugc-shared-component-themes($theme);
+  @include upload-component-themes($theme);
+  @include page404_theme($theme);
+}

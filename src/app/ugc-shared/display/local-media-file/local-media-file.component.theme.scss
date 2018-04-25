@@ -1,0 +1,42 @@
+@import '../../../../styles/burst-theme';
+
+@mixin ugc-display-local-media-file-theme($theme) {
+  $primaryPalette: burst-theme-palette($theme);
+  $primaryText: burst-theme-palette-text($primaryPalette);
+  $primaryTextInvert: burst-theme-palette-text-invert($primaryPalette, dis);
+  $secondaryPalette: burst-theme-palette($theme, sec);
+  $secondaryColor: burst-theme-palette-color($secondaryPalette);
+  $secondaryText: burst-theme-palette-text($secondaryPalette);
+  $backgroundPalette: burst-theme-palette($theme, bg);
+  $backgroundDiv: burst-theme-palette-text($backgroundPalette, dis);
+
+  .media-container {
+    .media-file {
+      background-color: $backgroundDiv;
+    }
+
+    .close-button {
+      .alt {
+        color: $secondaryColor;
+        fill: $secondaryColor;
+      }
+
+      .alt-text {
+        color: $secondaryText;
+        fill: $secondaryText;
+      }
+    }
+
+    .size-container {
+      color: $primaryText;
+      background-color: $primaryTextInvert;
+
+      svg {
+        path {
+          color: $primaryText;
+          fill: $primaryText;
+        }
+      }
+    }
+  }
+}

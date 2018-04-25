@@ -1,0 +1,6 @@
+@import '../../../../styles/burst-theme';
+@import './progress-info-prompt/progress-info-prompt.component.theme';
+
+@mixin progress-theme($theme) {
+  @include progress-info-prompt-theme($theme);
+}

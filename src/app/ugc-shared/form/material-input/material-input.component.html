@@ -1,0 +1,28 @@
+<div class="material-input-layout"
+     [ngClass]='{"focused": focused, "accept-value": focused || (value && value.length > 0), "errored": interacted && errored, "disabled": disabled}'>
+  <div *ngIf="includeLogo"
+       class="material-input-logo-container">
+    <div class="logo-layout animate">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  <div class="material-input-container">
+    <div class="input-container">
+      <label class="input-label animate">{{placeHolder}}<span *ngIf="required" class="required-ast">*</span><span *ngIf="disabled" class="disabled-text">{{disabledText}}</span></label>
+      <div class="input-underline animate"></div>
+      <input class="input"
+             [type]="type"
+             [value]="value"
+             [placeholder]="placeHolder"
+             [attr.required]="required"
+             [attr.disabled]="disabled"
+             (input)="value = $event.target.value"
+             (focus)="onFocus()"
+             (blur)="onBlur()"
+             (submit)="onSubmit()"/>
+    </div>
+    <div class="error-container">
+      <div class="error animate">{{error}}</div>
+    </div>
+  </div>
+</div>

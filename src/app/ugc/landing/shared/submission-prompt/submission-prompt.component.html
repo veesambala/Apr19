@@ -1,0 +1,25 @@
+<div class="submission-prompt-layout" [ngClass]="{'text-only-layout': promptType === 'TEXT_ONLY', 'image-layout': promptType === 'IMAGE' }">
+  <div class="submission-title">{{submissionTitle}}</div>
+  <div *ngIf="submissionBannerImage"
+       class="banner-container">
+    <img class="banner-image" src="{{submissionBannerImage}}">
+
+    <div *ngIf="submissionBannerText"
+         class="banner-text-container">
+      <div class="banner-text-background">
+        <div class="banner-text">{{submissionBannerText}}</div>
+      </div>
+    </div>
+
+    <div *ngIf="submissionBannerLogo"
+         class="banner-logo">
+      <a class="banner-logo-anchor"
+         [attr.href]="submissionBannerLogo.clickThroughUrl"
+         [class.disabled]="!submissionBannerLogo.clickThroughUrl"
+         target="_blank">
+        <img class="banner-logo-image"
+             src="{{submissionBannerLogo.imageUrl}}">
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+{
+  "env": "dev",
+  "version": "local.development",
+  "releaseTimestamp": 0,
+  "releaseTag": "local.development-0",
+  "releasePending": false,
+  "platformBaseUrl": "https://dev-platform.burst.com/2/",
+  "platformBaseUrl.env": {
+    "dev": "https://dev-platform.burst.com/2/",
+    "stage": "https://stage-platform.burst.com/2/",
+    "prod": "https://platform.burst.com/2/"
+  },
+  "ganId": "",
+  "ganId.env": {
+    "dev": "UA-104564245-1",
+    "stage": "UA-104552264-1",
+    "prod": "UA-104558482-1"
+  },
+  "log": {
+    "url": "",
+    "url.env": {
+      "dev": "https://dev-clientlogs.burst.com/ugcupload/events",
+      "stage": "https://stage-clientlogs.burst.com/ugcupload/events",
+      "prod": "https://clientlogs.burst.com/ugcupload/events"
+    },
+    "consoleLevel": "trace",
+    "consoleLevel.env": {
+      "dev": "debug",
+      "stage": "debug",
+      "prod": "info"
+    },
+    "reportLevel": "debug",
+    "reportLevel.env": {
+      "prod": "info"
+    },
+    "reportMax": 1000,
+    "reportMaxPerMinute": 120,
+    "reportBatchingCountThreshold": 15,
+    "reportBatchingTimeThreshold": 15000
+  }
+}

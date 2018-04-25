@@ -1,0 +1,9 @@
+@import './shared/powered-by/powered-by.component.theme';
+@import './shared/submission-prompt/submission-prompt.component.theme';
+@import './shared/upload/upload.component.theme';
+
+@mixin landing-component-themes($theme) {
+  @include landing-powered-by-theme($theme);
+  @include landing-submission-prompt-theme($theme);
+  @include landing-upload-prompt-theme($theme);
+}

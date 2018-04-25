@@ -1,0 +1,13 @@
+<tc-agreement-prompt></tc-agreement-prompt>
+<div class="acceptance-checkbox" *ngIf="checkboxPrompt">
+        <form-material-checkbox [disabled]="false" 
+                [required]="true"
+                [startingState]="false"
+                [label]="tcAgreePrompt"
+                (onValueChangedEvent)="valueChanged($event)">
+        </form-material-checkbox>
+        {{textPrompt}}
+<div *ngIf="textPrompt" class="terms-conditions-acceptance">
+    {{termsAndConditionAgreementText}}
+</div>
+</div>

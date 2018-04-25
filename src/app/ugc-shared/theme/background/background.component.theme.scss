@@ -1,0 +1,10 @@
+@import '../../../../styles/burst-theme';
+
+@mixin ugc-background-theme($theme) {
+  $backgroundPalette: burst-theme-palette($theme, bg);
+  $backgroundColor: burst-theme-palette-color($backgroundPalette);
+
+  .background {
+    background-color: $backgroundColor;
+  }
+}

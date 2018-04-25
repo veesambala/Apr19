@@ -1,0 +1,16 @@
+<div class="user-info-container">
+  <div *ngFor="let field of formFields; let fieldIndex = index"
+       class="user-info-field">
+    <form-material-input [type]="field.value.type"
+                         [placeHolder]="field.value.placeHolder"
+                         [startingValue]="field.startingInputValue"
+                         [required]="field.value.required"
+                         [requiredText]="requiredText"
+                         [includeLogo]="!!field.value.iconName"
+                         [inputValidator]="formValidator(field.value.validationRegex, field.value.validationError)"
+                         (onValueChangedEvent)="fieldChanged(field.key, $event)"
+                         (onSubmitEvent)="fieldSubmitted(fieldIndex, field.key, $event)">
+      <user-info-form-icon [iconName]="field.value.iconName"></user-info-form-icon>
+    </form-material-input>
+  </div>
+</div>

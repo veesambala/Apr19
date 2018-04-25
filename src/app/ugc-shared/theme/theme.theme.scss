@@ -1,0 +1,7 @@
+@import 'background/background.component.theme';
+@import 'page-layout/page-layout.component.theme';
+
+@mixin ugc-theme-theme($theme) {
+  @include ugc-background-theme($theme);
+  @include ugc-page-layout-theme($theme);
+}

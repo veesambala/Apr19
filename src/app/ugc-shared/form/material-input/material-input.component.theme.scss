@@ -1,0 +1,95 @@
+@import '../../../../styles/burst-theme';
+
+@mixin ugc-form-material-input-theme($theme) {
+  $primaryPalette: burst-theme-palette($theme);
+  $primaryColor: burst-theme-palette-color($primaryPalette);
+  $primaryText: burst-theme-palette-text($primaryPalette);
+  $errorPalette: burst-theme-palette($theme, wn);
+  $errorColor: burst-theme-palette-color($errorPalette);
+  $foregroundPalette: burst-theme-palette($theme, fg);
+  $foregroundColor: burst-theme-palette-color($foregroundPalette);
+  $foregroundText: burst-theme-palette-text($foregroundPalette);
+  $foregroundTextDis: burst-theme-palette-text($foregroundPalette, dis);
+
+  .material-input-layout {
+    .input {
+      color: $foregroundText;
+      caret-color: $primaryColor;
+    }
+
+    .input-label {
+      color: $foregroundTextDis;
+    }
+
+    .input-underline {
+      background-color: $foregroundTextDis;
+    }
+
+    .error {
+      color: $errorColor;
+    }
+
+    .material-input-logo-container {
+      svg {
+        fill: $foregroundTextDis;
+      }
+    }
+  }
+
+  .material-input-layout.focused {
+    .input-label {
+      color: $primaryColor;
+    }
+
+    .input-underline {
+      background-color: $primaryColor;
+    }
+
+    .material-input-logo-container {
+      svg {
+        fill: $primaryColor;
+      }
+    }
+  }
+
+  .material-input-layout.errored {
+    .input-label {
+      color: $errorColor;
+    }
+
+    .input-underline {
+      background-color: $errorColor;
+    }
+
+    .material-input-logo-container {
+      svg {
+        fill: $errorColor;
+      }
+    }
+  }
+
+  .material-input-layout.disabled {
+    .input {
+      color: $foregroundTextDis;
+    }
+
+    .input-label {
+      color: $foregroundTextDis;
+    }
+
+    .input-underline {
+      background: linear-gradient(to right, transparent 50%, $foregroundColor 50%), linear-gradient(to right, $foregroundTextDis, $foregroundTextDis);
+      background-size: 4px 2px, 100% 2px;
+    }
+
+    .error {
+      color: $foregroundTextDis;
+    }
+
+    .material-input-logo-container {
+      svg {
+        fill: $foregroundTextDis;
+      }
+    }
+  }
+}

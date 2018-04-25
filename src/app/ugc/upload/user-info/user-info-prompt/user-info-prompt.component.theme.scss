@@ -1,0 +1,10 @@
+@import '../../../../../styles/burst-theme';
+
+@mixin user-info-prompt-theme($theme) {
+  $backgroundPalette: burst-theme-palette($theme, bg);
+  $backgroundText: burst-theme-palette-text($backgroundPalette, sec);
+
+  .user-info-prompt {
+    color: $backgroundText;
+  }
+}

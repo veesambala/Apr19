@@ -1,0 +1,85 @@
+@import '../../../../../styles/burst-responsive';
+
+$mobileSpacing: 6px;
+$tabletSpacing: 10px;
+$desktopSpacing: 8px;
+
+.media-layout {
+  position: relative;
+  width: 100%;
+
+  .media-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    .media-item {
+      position: relative;
+
+      media-adder-button,
+      display-local-media-file {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0; top: 0;
+      }
+    }
+
+    @include burst-responsive-xs() {
+      margin-left: calc(#{$mobileSpacing} / 2);
+
+      .media-item {
+        padding-top: calc(4/5 * 50% - #{$mobileSpacing});
+        width: calc(50% - #{$mobileSpacing});
+        margin-bottom: #{$mobileSpacing};
+        margin-right: #{$mobileSpacing};
+      }
+    }
+
+    @include burst-responsive-sm() {
+      margin-left: calc(#{$tabletSpacing} / 2);
+
+      .media-item {
+        padding-top: calc(4/5 * 50% - #{$tabletSpacing});
+        width: calc(50% - #{$tabletSpacing});
+        margin-bottom: #{$tabletSpacing};
+        margin-right: #{$tabletSpacing};
+      }
+    }
+
+    @include burst-responsive-desktop() {
+      margin-left: calc(#{$desktopSpacing} / 2);
+
+      .media-item {
+        padding-top: calc(4/5 * 33% - #{$desktopSpacing});
+        width: calc(33% - #{$desktopSpacing});
+        margin-bottom: #{$desktopSpacing};
+        margin-right: #{$desktopSpacing};
+      }
+    }
+  }
+
+  .media-container.no-media {
+    justify-content: center;
+  }
+
+  @include burst-responsive-desktop() {
+    .media-container.single-media {
+      justify-content: center;
+    }
+
+    .media-container.three-media {
+      justify-content: center;
+
+      .spacer-item {
+        height: 100%;
+        width: 8px;
+      }
+    }
+
+    .media-container.four-media {
+      justify-content: flex-end;
+    }
+  }
+}

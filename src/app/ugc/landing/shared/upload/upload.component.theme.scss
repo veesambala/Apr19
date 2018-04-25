@@ -1,0 +1,28 @@
+@import '../../../../../styles/burst-theme';
+
+@mixin landing-upload-prompt-theme($theme) {
+  $secondaryPalette: burst-theme-palette($theme, sec);
+  $secondaryColor: burst-theme-palette-color($secondaryPalette);
+  $secondaryText: burst-theme-palette-text($secondaryPalette);
+  $backgroundPalette: burst-theme-palette($theme, fg);
+  $backgroundColor: burst-theme-palette-color($theme);
+  $backgroundText: burst-theme-palette-text($backgroundPalette, dis);
+
+  .upload-prompt-container {
+    .prompt-text {
+      color: $backgroundText;
+    }
+
+    .upload-button-container {
+      .upload-button {
+        color: $secondaryText;
+        background-color: $secondaryColor;
+      }
+    }
+
+    .not-now-button {
+      color: $secondaryColor;
+      background-color: $backgroundColor;
+    }
+  }
+}

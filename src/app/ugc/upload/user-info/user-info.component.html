@@ -1,0 +1,24 @@
+<div class="info-container">
+  <div class="prompt-container">
+    <user-info-prompt></user-info-prompt>
+  </div>
+  <div class="form-container">
+    <user-info-form (ButtonStateEmitter)="setButtonState($event)"></user-info-form>
+  </div>
+  <div *ngIf="termsConditionsType==='CHECKBOX'" class="terms-conditions-checkbox">
+      <form-material-checkbox [disabled]="false" 
+                              [required]="true"
+                              [startingState]="false"
+                              [label]="acceptenceText"
+                              [link]="dynamicLink"
+                              (onValueChangedEvent)="valueChanged($event)"
+                              (enabledClickEvent)="enabledlink($event)">
+                            </form-material-checkbox>
+    </div>
+  <div *ngIf="termsConditionsType==='LINK'" class="terms-conditions-link" >
+    <div class="acceptance-text-unanchored" [innerHTML] = "acceptenceText"></div>
+    <div class="acceptance-text-anchored" [ngClass] = '{"link-disabled": primaryDisabledButtonState}'>
+      <a (click) = "navigateToTcPage()" [innerHTML]= "anchoredAcceptanceText"></a>
+    </div>
+  </div>  
+</div>

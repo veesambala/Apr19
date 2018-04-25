@@ -1,0 +1,7 @@
+@import '../../../../../styles/burst-theme';
+@import '../../../../../styles/burst-responsive';
+@import './media-adder-button/media-adder-button.component.theme';
+
+@mixin media-adder-control-theme($theme) {
+  @include add-media-media-adder-button-theme($theme);
+}

@@ -1,0 +1,17 @@
+@import '../../../../../styles/burst-theme';
+
+@mixin landing-powered-by-theme($theme) {
+  $backgroundPalette: burst-theme-palette($theme, fg);
+  $primaryText: burst-theme-palette-text($backgroundPalette);
+  $tertiaryText: burst-theme-palette-text($backgroundPalette, ter);
+
+  .powered-by-layout {
+    .powered-by-text {
+      color: $primaryText;
+    }
+
+    .burst-text {
+      color: $tertiaryText;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../../../styles/burst-theme';
+
+@mixin ugc-toaster-message-theme($theme) {
+  $errorPalette: burst-theme-palette($theme, wn);
+  $errorColor: burst-theme-palette-color($errorPalette);
+  $secondaryPalette: burst-theme-palette($theme, sec);
+  $secondaryColor: burst-theme-palette-color($secondaryPalette);
+  $secondaryText: burst-theme-palette-text($secondaryPalette);
+  .toaster-container {
+    background-color: $errorColor;
+    .toaster-message {
+      color: $secondaryText;
+    }
+  }
+}

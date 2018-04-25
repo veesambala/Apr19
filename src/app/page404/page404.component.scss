@@ -1,0 +1,22 @@
+@import '../../styles/burst-responsive';
+@import '../../styles/burst-text';
+$descTextSize: burst-text-get-size($textSizesSmall, sm);
+$subTextSize: burst-text-get-size($textSizesSmall, xl);
+$titleTextSize: burst-text-get-size($textSizesLarge, xxl);
+
+.page404 {
+  margin: 125px 10% 0 10%;
+  text-align: center;
+
+  .error-code {
+    @include burst-text($titleTextSize, (weight: bold));
+  }
+  .error-prompt {
+    @include burst-text($subTextSize, (weight: bold));
+    margin-top: 20px;
+  }
+  .error-info {
+    margin-top: 35px;
+    @include burst-text($descTextSize, (weight: bold));
+  }
+}

@@ -1,0 +1,132 @@
+@import '../../../../styles/burst-text';
+
+$mainTextSize: burst-text-get-size($textSizesMed, md);
+$errorTextSize: calc(0.75 * #{$mainTextSize});
+$smallLabelTextSize: calc(0.75 * #{$mainTextSize});
+
+$inputPadding: 6px;
+$errorPadding: 6px;
+$logoPadding: 8px;
+
+$inputHeight: calc(#{$mainTextSize} + 2 * #{$inputPadding});
+$inputContainerHeight: calc(#{$inputHeight} + #{$smallLabelTextSize});
+$errorHeight: calc(#{$errorTextSize} + #{$errorPadding});
+$parentContainerHeight: calc(#{$inputContainerHeight} + #{$errorHeight});
+
+
+.material-input-layout {
+  width: 100%;
+  display: flex;
+
+  .animate {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .material-input-logo-container {
+    height: $parentContainerHeight;
+    width: $inputHeight;
+    margin-right: $logoPadding;
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .logo-layout {
+      position: absolute;
+      height: $inputHeight;
+      width: $inputHeight;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .material-input-container {
+    height: $parentContainerHeight;
+    flex: 1 0;
+    display: flex;
+    flex-direction: column;
+
+    .input-container {
+      position: relative;
+      width: 100%;
+      height: $inputContainerHeight;
+
+      .input-label {
+        position: absolute;
+        bottom: $inputPadding;
+        @include burst-text($mainTextSize);
+
+        .disabled-text {
+          padding-left: 4px;
+        }
+      }
+
+      .input-underline {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 0; left: 0;
+      }
+
+      .input {
+        position: absolute;
+        width: 100%;
+        height: $mainTextSize;
+        bottom: 0; left: 0;
+        padding: $inputPadding 0 $inputPadding 0;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        @include burst-text($mainTextSize);
+      }
+
+      input::-webkit-input-placeholder { color:transparent; }
+      input:-moz-placeholder { color:transparent; } /* FF 4-18 */
+      input::-moz-placeholder { color:transparent; } /* FF 19+ */
+      input:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+    }
+
+    .error-container {
+      position: relative;
+      width: 100%;
+      height: $errorHeight;
+      overflow: hidden;
+
+      .error {
+        position: absolute;
+        bottom: calc(1.1 * #{$errorHeight});
+        @include burst-text($errorTextSize);
+      }
+    }
+  }
+}
+
+.material-input-layout.focused {
+  .input-underline {
+    bottom: -1px !important;
+    height: 2px !important;
+  }
+}
+
+.material-input-layout.accept-value {
+  .input-label {
+    bottom: $inputHeight !important;
+    font-size: $smallLabelTextSize !important;
+  }
+}
+
+.material-input-layout.errored {
+  .error {
+    bottom: 0 !important;
+  }
+}

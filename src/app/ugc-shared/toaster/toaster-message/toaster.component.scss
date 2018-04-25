@@ -1,0 +1,51 @@
+@import '../../../../styles/burst-text';
+$mainTextSize: burst-text-get-size($textSizesMed, md);
+$errorTextSize: calc(0.75 * #{$mainTextSize});
+$errorHeight: calc(2.5 * #{$errorTextSize});
+
+.toaster-container {
+  visibility: hidden;
+  display: none;
+  height: 50px;
+  margin: auto;
+  text-align: center;
+  border-radius: 2px;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  white-space: nowrap;
+  .toaster-message {
+    @include burst-text($errorTextSize, (weight: bold));
+    padding: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &.show {
+    visibility: visible;
+    display: block;
+    animation: fadein 0.5s;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}

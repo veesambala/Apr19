@@ -1,0 +1,85 @@
+@import '../../../../../styles/burst-text';
+@import '../../../../../styles/burst-responsive';
+
+.upload-prompt-container {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.upload-prompt-layout {
+  width: calc(100% - 2 * 28px);
+  margin-left: 14px;
+  margin-right: 14px;
+  max-width: 336px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+
+  .prompt-text {
+    @include burst-text-responsive(md, (sm, md));
+    width: 100%;
+    text-align: center;
+  }
+
+  .button-container {
+    width: 100%;
+
+    .button-input {
+      @include burst-text-responsive(sm, (sm, md), (weight: bold, link: true));
+      width: 100%;
+      text-align: center;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    toaster-message {
+      position: absolute;
+      transform: translate(-8%, -115%);
+     }
+  }
+
+  .upload-button-container {
+    box-shadow: 1px 1px 1px rgba(black, 0.3);
+
+    .upload-button {
+      border-radius: 2px;
+    }
+
+    #landingFileInput {
+      display: none;
+    }
+  }
+
+  @include burst-responsive-xs() {
+    .upload-button-container {
+      margin-top: 24px;
+    }
+
+    .not-now-container {
+      margin-top: 8px;
+    }
+  }
+
+  @include burst-responsive-sm() {
+    .upload-button-container {
+      margin-top: 28px;
+    }
+
+    .not-now-container {
+      margin-top: 16px;
+    }
+  }
+
+  @include burst-responsive-desktop() {
+    .upload-button-container {
+      margin-top: 32px;
+    }
+
+    .not-now-container {
+      margin-top: 16px;
+    }
+  }
+}

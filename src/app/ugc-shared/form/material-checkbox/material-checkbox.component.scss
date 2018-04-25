@@ -1,0 +1,66 @@
+@import '../../../../styles/burst-text';
+$mainTextSize: burst-text-get-size($textSizesMed, sm);
+$checkbox-margin: 16px 0;
+$checkbox-size: 16px;
+$checkbox-padding: 4px;
+$checkmark-width: 2px;
+
+.checkbox-container {
+  position: relative;
+  margin: $checkbox-margin;
+  text-align: left;
+  label {
+    cursor: pointer;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    &:before {
+      // box
+      width: $checkbox-size;
+      height: $checkbox-size;
+      border: 1px solid;
+      cursor: pointer;
+      transition: background-color .3s;
+    }
+  }
+  input[type="checkbox"] {
+    outline: 0;
+    margin-right: $checkbox-size - 10px;
+    visibility: hidden;
+    &:checked {
+      +label:before {
+        border: 1px solid;
+      }
+      +label:after {
+        $checkmark-size: $checkbox-size - 2*$checkbox-padding;
+        transform: rotate(-45deg);
+        top: ($checkbox-size / 2) - ($checkmark-size / 4) - $checkbox-size/10;
+        left: $checkbox-padding;
+        width: $checkmark-size;
+        height: $checkmark-size / 2;
+        border: $checkmark-width solid;
+        border-top-style: none;
+        border-right-style: none;
+      }
+    }
+  }
+}
+
+.material-checkbox-layout {
+  width: 100%;
+  display: flex;
+  .material-checkbox-label {
+    @include burst-text($mainTextSize);
+  }
+  .material-checkbox-link {
+    @include burst-text($mainTextSize, (weight: bold, case: upper));
+    >a {
+      text-decoration: none !important;
+      color: unset;
+    }
+  }  
+}

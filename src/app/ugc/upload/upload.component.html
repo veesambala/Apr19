@@ -1,0 +1,21 @@
+<ugc-page-layout [mobileHeaderDisplayType]="'PAGE_TITLE'"
+                 [mobileHeaderPageTitle]="pageTitle"
+                 [mobileHeaderDisableBackgroundPattern]="true">
+  <div content class="upload-content">
+    <div class="desktop-title">{{pageTitle}}</div>
+    <div class="screen-layout">
+      <div class="screen-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <div class="upload-footer">
+      <toaster-message></toaster-message>
+      <div class="steps-button-container">
+        <steps-nav-buttons (onPrimaryButtonClicked)="primaryButtonClick()"></steps-nav-buttons>
+      </div>
+      <div class="steps-progress-container">
+        <steps-progress-bar [numSteps]="3"></steps-progress-bar>
+      </div>
+    </div>
+  </div>
+</ugc-page-layout>

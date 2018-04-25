@@ -1,0 +1,70 @@
+@import "../../../../styles/burst-responsive";
+@import '../../../../styles/burst-text';
+$labelTextSize: burst-text-get-size($textSizesMed, sm);
+
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@include burst-responsive-xs() {
+  .info-container {
+    width: 90%;
+
+    .prompt-container {
+      margin-top: 32px;
+    }
+
+    .form-container {
+      margin-top: 24px;
+    }
+  }
+}
+
+@include burst-responsive-sm() {
+  .info-container {
+    width: 70%;
+
+    .prompt-container {
+      margin-top: 48px;
+    }
+
+    .form-container {
+      margin-top: 32px;
+    }
+  }
+}
+
+@include burst-responsive-desktop() {
+  .info-container {
+    width: 360px;
+
+    .prompt-container {
+      margin-top: 32px;
+    }
+
+    .form-container {
+      margin-top: 24px;
+    }
+  }
+}
+.terms-conditions-link{
+  text-align:center;
+  @include burst-text($labelTextSize);
+  .acceptance-text-unanchored{
+    margin-top:10px;
+  }
+  .link-disabled{
+    pointer-events: none;
+  }
+  .acceptance-text-anchored{
+    margin-top:5px;
+    @include burst-text($labelTextSize, (link: true, weight: bold));
+
+    >a {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import '../../../../../styles/burst-theme';
+
+@mixin tc-agreement-prompt-theme($theme) {
+  $backgroundPalette: burst-theme-palette($theme, bg);
+  $backgroundText: burst-theme-palette-text($backgroundPalette, prim);
+
+  .term-condition-text {
+    color: $backgroundText;
+  }
+}

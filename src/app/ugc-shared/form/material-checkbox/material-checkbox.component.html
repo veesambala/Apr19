@@ -1,0 +1,23 @@
+<div class="material-checkbox-layout">
+  <div class="material-checkbox-container">
+    <div class="checkbox-container">
+      <input type="checkbox" 
+              id="material-checkbox"
+             [attr.required]="required"
+             [disabled]="disabled"
+             [checked]="checkedState"
+            (change)="onChange($event)"
+             />
+      <label (click)="onCheckboxClicked()"
+             for="material-checkbox" 
+             class="material-checkbox-label"
+             [innerHTML] = "label"></label>             
+             <span class="material-checkbox-link" *ngIf="link && link.text">
+               <a [routerLink]="link.navigationLink" 
+                  preserveQueryParams>
+                  {{link.text}} </a>
+             </span>
+    </div>
+    
+</div>
+</div>

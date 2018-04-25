@@ -1,0 +1,5 @@
+@import 'local-media-file/local-media-file.component.theme';
+
+@mixin ugc-display-theme($theme) {
+  @include ugc-display-local-media-file-theme($theme);
+}

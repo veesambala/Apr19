@@ -1,0 +1,22 @@
+@import '../../../../../styles/burst-theme';
+
+@mixin ugc-page-layout-mobile-header-theme($theme) {
+  $primaryPalette: burst-theme-palette($theme);
+  $primaryLightColor: burst-theme-palette-color($primaryPalette, light);
+  $primaryDarkColor: burst-theme-palette-color($primaryPalette, dark);
+  $primaryTextColor: burst-theme-palette-text($primaryPalette);
+
+  .ugc-page-layout-mobile-header {
+    background: radial-gradient(#{$primaryLightColor}, #{$primaryDarkColor});
+
+    .ugc-page-layout-primary-text {
+      color: $primaryTextColor;
+    }
+
+    .ugc-page-layout-mobile-header-button {
+      .cls-1 {
+        fill: $primaryTextColor;
+      }
+    }
+  }
+}

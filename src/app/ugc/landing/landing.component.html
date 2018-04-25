@@ -1,0 +1,25 @@
+<ugc-page-layout [mobileHeaderDisplayType]="mobileHeaderDisplayType">
+  <div mobileHeader class="header-container">
+    <div class="submission-prompt-container">
+      <submission-prompt (onPromptTypeSet)="promptTypeSet($event)"></submission-prompt>
+    </div>
+    <div class="branding-logos-container">
+      <ugc-branding-logos></ugc-branding-logos>
+    </div>
+  </div>
+
+  <div content class="content-container">
+    <div class="content-layout">
+      <div class="submission-prompt-container desktop-only">
+        <submission-prompt (onPromptTypeSet)="promptTypeSet($event)"></submission-prompt>
+      </div>
+      <div class="upload-container">
+        <upload (onNotNowClicked)="notNowClicked($event)"
+                (onMediaSelection)="uploadSelectedFile($event)"></upload>
+      </div>
+      <div class="powered-by-layout">
+        <powered-by></powered-by>
+      </div>
+    </div>
+  </div>
+</ugc-page-layout>

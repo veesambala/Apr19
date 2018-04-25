@@ -1,0 +1,20 @@
+<div class="upload-prompt-container">
+  <div class="upload-prompt-layout">
+    <div class="prompt-text promptText">{{promptText}}</div>
+
+    <div class="upload-button-container button-container">
+      <toaster-message></toaster-message>
+      <label>
+      <div class="upload-button button-input">{{uploadText}}</div>
+      <input id="landingFileInput"
+             type="file"
+             name="files"
+             (change)="fileSelected($event)"/>
+    </label>
+    </div>
+
+    <div *ngIf="notNowShown" class="not-now-container button-container">
+      <div class="not-now-button button-input" (click)="notNowClick()">{{notNowText}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+@import '../../../../../styles/burst-theme';
+@import './progress-step/progress-step.component.theme';
+
+@mixin upload-steps-progress-bar-theme($theme) {
+  @include upload-steps-progress-bar-step-theme($theme);
+
+  $backgroundPalette: burst-theme-palette($theme, bg);
+  $backgroundBaseColor: burst-theme-palette-color($backgroundPalette);
+  $textDividerColor: burst-theme-palette-text($backgroundPalette, div);
+
+  .progress-container {
+    background-color: $backgroundBaseColor;
+
+    .progress-step-container {
+      background-color: $textDividerColor;
+    }
+  }
+}

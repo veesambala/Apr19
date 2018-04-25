@@ -1,0 +1,27 @@
+@import '../../../../../styles/burst-theme';
+
+@mixin upload-steps-nav-button-theme($theme) {
+  $secondaryPalette: burst-theme-palette($theme, sec);
+  $secondaryColor: burst-theme-palette-color($secondaryPalette);
+  $secondaryText: burst-theme-palette-text($secondaryPalette);
+  $backgroundPalette: burst-theme-palette($theme, bg);
+  $backgroundText: burst-theme-palette-text($backgroundPalette, dis);
+
+  .nav-buttons-container {
+    .primary-button {
+      background-color: $secondaryColor;
+    }
+
+    .primary-button.disabled {
+      background-color: $backgroundText;
+    }
+
+    .primary-button-text {
+      color: $secondaryText;
+    }
+
+    .secondary-button-text {
+      color: $secondaryColor;
+    }
+  }
+}

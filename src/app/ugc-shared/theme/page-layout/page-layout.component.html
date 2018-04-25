@@ -1,0 +1,13 @@
+<div class="page-layout">
+  <mobile-header [displayType]="mobileHeaderDisplayType"
+                 [pageTitle]="mobileHeaderPageTitle"
+                 [disableBackgroundPattern]="mobileHeaderDisableBackgroundPattern">
+    <ng-content select="[mobileHeader]"></ng-content>
+  </mobile-header>
+
+  <desktop-right-panel></desktop-right-panel>
+
+  <div class="page-layout-content">
+    <ng-content select="[content]"></ng-content>
+  </div>
+</div>

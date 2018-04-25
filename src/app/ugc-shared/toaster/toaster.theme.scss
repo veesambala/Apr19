@@ -1,0 +1,5 @@
+@import 'toaster-message/toaster.component.theme';
+
+@mixin ugc-toaster-theme($theme) {
+  @include ugc-toaster-message-theme($theme);
+}

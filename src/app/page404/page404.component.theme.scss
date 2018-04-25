@@ -1,0 +1,17 @@
+@import '../../styles/burst-theme';
+
+@mixin page404_theme($theme){
+    $backgroundPalette: burst-theme-palette($theme, bg);
+    $backgroundText: burst-theme-palette-text($backgroundPalette, sec);
+  
+    .page404{
+        color:$backgroundText;
+
+        .svg-404 {
+            .svg-404-icon {
+                fill: $backgroundText;
+            }
+        }
+    }
+
+}

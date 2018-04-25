@@ -1,0 +1,7 @@
+@import 'material-input/material-input.component.theme';
+@import 'material-checkbox/material-checkbox.component.theme';
+
+@mixin ugc-form-theme($theme) {
+  @include ugc-form-material-input-theme($theme);
+  @include ugc-form-material-checkbox-theme($theme);
+}
